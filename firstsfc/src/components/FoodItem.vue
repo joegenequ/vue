@@ -10,24 +10,18 @@
 </template>
 
 <script>
+  import axios from 'axios'
   export default {
         props: {
            foodName: {
-                type: String,
+                type: Number,
                 required: true
             },
            foodDesc: {
              type: String,
              required: false,
-             default: 'This is the default description.',
-             validator: function(value) {
-               if( 20<value.length && value.length<50 ) {
-                 return true;
-               }
-               else {
-                 return false;
-               }
-             }
+             default: 'This is the default description.'
+             
            },
            isFavorite: {
              type: Boolean,
